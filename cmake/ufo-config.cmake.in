@@ -1,0 +1,22 @@
+@PACKAGE_INIT@
+
+# Valid components that can be searched for
+set(_supported_components Cloud Compute Container Core Execution Geometry Map Math Morton Plan Time Utility Vision Viz)
+
+if(${CMAKE_FIND_PACKAGE_NAME}_FIND_COMPONENTS)
+  # Iterate through components attempting to be found
+  foreach(component ${${CMAKE_FIND_PACKAGE_NAME}_FIND_COMPONENTS})
+    # If we could not find the component, set the ufo library to no
+    # longer be found and notify the user about the missing component
+    if (NOT ${component} IN_LIST _supported_components)
+      set(UFO_FOUND False)
+      set(UFO_NOT_FOUND_MESSAGE "Unsupported component: ${component}")
+    else()
+      include(${CMAKE_CURRENT_LIST_DIR}/${component}-config.cmake)
+    endif()
+  endforeach()
+else()
+  foreach(component ${_supported_components})
+    include(${CMAKE_CURRENT_LIST_DIR}/${component}-config.cmake)
+  endforeach()
+endif()

@@ -1,0 +1,24 @@
+InlayHints:
+  Enabled: Yes
+  Designators: No
+  ParameterNames: Yes
+  DeducedTypes: No
+Hover:
+  ShowAKA: Yes
+CompileFlags:
+  CompilationDatabase: ./build
+  Add:
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/cloud/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/compute/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/container/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/core/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/execution/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/geometry/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/map/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/math/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/morton/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/plan/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/time/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/utility/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/vision/include"
+    - "-I/home/dduberg/ufo_ws/src/ufo/lib/viz/include"

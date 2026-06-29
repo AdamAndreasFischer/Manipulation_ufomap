@@ -1,0 +1,5 @@
+if(not ${UFO_FULL_PROJECT_MODE})
+	include(geometry/geometry.cmake)
+	include(morton/morton.cmake)
+	include(utility/utility.cmake)
+endif()

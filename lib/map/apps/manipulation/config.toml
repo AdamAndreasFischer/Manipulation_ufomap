@@ -1,0 +1,61 @@
+title = "UFOManipulation Config"
+
+[dataset]
+dataset_path = "/home/adamfi/codes/Pointclouds/pointclouds/vis-seq-robotlab-17-step2"
+# x, y, z, qw, qx, qy, qz (meters and unit quaternion)
+transform = [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
+
+[map]
+# Resolution of the map in meters
+resolution = 0.005
+
+[integrator]
+# In degrees
+angular_resolution = 1.0
+# Distance in meters
+min_distance = 0.0
+# Distance in meters
+max_distance = 10.0
+# In degrees
+sensor_angular_resolution = 5.0
+# In meters
+translation_error = 0.0
+# In degrees
+orientation_error = 0.0
+# Probability [0, 1], should be over 0.5 to increase occupancy
+occupancy_hit = 0.7
+# Probability [0, 1], should be below 0.5 to decrease occupancy
+occupancy_miss = 0.45
+
+[renderer]
+output_dir = "/home/adamfi/codes/UFO_TEST"
+# Pixels
+width = 360#160 # 1024
+# Pixels
+height = 360#160 # 1024
+# World coordinates (meters)
+top_left =  [3.9933, 2.6898] #+1.0m robo-lab # +0.5m robo-lab :[3.4717, 2.1949] # Robo-lab-measurement :[2.95, 1.7]
+# World coordinates (meters)
+top_right = [3.7584, -2.7923] #+1.0m robo-lab # +0.5m robo-lab :[3.2792, -2.2961] # Robo-lab-measurement :[2.8, -1.8]
+# World coordinates (meters)
+bottom_right = [-1.8398, -2.8377] #+1.0m robo-lab # +0.5m robo-lab :[-1.369, -2.333] # Robo-lab-measurement :[-0.9, -1.83]
+# World coordinates (meters)
+bottom_left = [-2.1842, 2.7505] #+1.0m robo-lab # +0.5m robo-lab :[-1.652, 2.245] # Robo-lab-measurement :[-1.12, 1.74]
+# Meters
+elevation = 2.8
+# Distance in meters
+near_clip = 0.01
+# Distance in meters
+far_clip =  2.7
+# Red, Green, Blue components in range [0..255]
+background_color = [115, 115, 115]
+
+# new code from here
+# Original mocap rig corners (before the +0.5 m expansion).
+# World-space points outside this quad are discarded before map insertion,
+# removing clutter from lab equipment visible in the wider rendered area.
+inner_top_left     = [ 2.3,  2.7]
+inner_top_right    = [ 2.3, -1.80]
+inner_bottom_right = [-1.2, -1.83]#[-0.90, -1.83]
+inner_bottom_left  = [-1.2,  2.7]#[-1.12,  1.74]
+# new code ends here

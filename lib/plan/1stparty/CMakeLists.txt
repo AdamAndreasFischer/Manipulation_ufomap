@@ -1,0 +1,5 @@
+if(not ${UFO_FULL_PROJECT_MODE})
+	include("container/container.cmake")
+	include("map/map.cmake")
+	include("math/math.cmake")
+endif()
